@@ -111,7 +111,7 @@ Test step 1/78, cost time 0.68s
 Test step 2/78, cost time 0.72s
 Test step 3/78, cost time 0.64s
 ```
-这里给出自测结果，下面图片分别是混淆矩阵confusion_matrix、查准率和召回率的调和平均数F1-score、准确率和置信度的关系图P_curve、精准率与召回率的关系图PR_curve以及召回率和置信度之间的关系图R_curve。
+这里给出自测结果，下面图片分别是混淆矩阵confusion_matrix、查准率和召回率的调和平均数F1-score、准确率和置信度的关系图P_curve、精准率与召回率的关系图PR_curve以及召回率和置信度之间的关系图R_curve。 \
 <img width="550" height="350" src="https://github.com/RintaClio/my_picture/blob/main/confusion_matrix.png?raw=true" alt="混淆矩阵"/>
 <img width="550" height="350" src="https://github.com/RintaClio/my_picture/blob/main/F1_curve.png?raw=true" alt="F1-score"/>
 <img width="550" height="350" src="https://github.com/RintaClio/my_picture/blob/main/P_curve.png?raw=true" alt="P-curve"/>
@@ -126,7 +126,7 @@ Test step 3/78, cost time 0.64s
 cd detect
 python detect.py
 ```
-待检测图片存放在`detect/detect_images`文件夹，用户可自行增删。检测得到的结果存放在`results`文件夹。这里给出几个检测结果示例。
+待检测图片存放在`detect/detect_images`文件夹，用户可自行增删。检测得到的结果存放在`results`文件夹。这里给出几个检测结果示例。 \
 <img width="450" height="250" src="https://github.com/RintaClio/my_picture/blob/main/1.jpg?raw=true" alt="animals"/>   <img width="450" height="250" src="https://github.com/RintaClio/my_picture/blob/main/animals.jpg?raw=true" alt="animals1"/> \
 <img width="450" height="250" src="https://github.com/RintaClio/my_picture/blob/main/2.jpg?raw=true" alt="basketball"/>   <img width="450" height="250" src="https://github.com/RintaClio/my_picture/blob/main/basketball.jpg?raw=true" alt="basketball1"/> \
 <img width="180" height="250" src="https://github.com/RintaClio/my_picture/blob/main/3.jpg?raw=true" alt="celebrity"/>   <img width="180" height="250" src="https://github.com/RintaClio/my_picture/blob/main/celebrity.jpg?raw=true" alt="celebrity1"/> \
