@@ -6,7 +6,7 @@ Chien-Yao Wang, Alexey Bochkovskiy, Hong-Yuan Mark Liao. YOLOv7: Trainable bag-o
 ## 环境配置
 这里采用的MindSpore版本为MindSpore1.8.1，硬件平台为GPU CUDA11.1，操作系统为LINUX-x86_64，编程语言Python3.8，使用Conda方式安装环境。MindSpore安装详见[官网](https://www.mindspore.cn/install)。
 
-此处安装MindSpore时创建的conda虚拟环境为*mindspore_py38*，通过运行`conda activate mindspore_py38`进入对应的conda环境，并安装与CUDA版本对应的Pytorch。yolov7所需的其他库可参照官方给出的`requirements.txt`，在终端输入
+此处安装MindSpore时创建的conda虚拟环境为*mindspore_py38*，通过运行`conda activate mindspore_py38`进入对应的conda环境。yolov7所需的其他库可参照官方给出的`requirements.txt`，在终端输入
 ```
   pip install -r requirements.txt
 ```
@@ -60,7 +60,7 @@ Chien-Yao Wang, Alexey Bochkovskiy, Hong-Yuan Mark Liao. YOLOv7: Trainable bag-o
 ```
 
 ### 其他
-制作好数据集后，需要在`config/data`和`config/network_yolov7`下分别新增`coco_tiny.yaml`和`yolov7_tiny.yaml`。可直接复制原先的`coco.yaml`和`yolov7.yaml`。对于`coco_tiny.yaml`，修改`train_tiny.txt`和`val_tiny.txt`所在文件路径，根据标签种类设置`nc`和`class name`。对于对于`yolov7_tiny.yaml`，修改`nc`。
+制作好数据集后，需要在`config/data`和`config/network_yolov7`下分别新增`coco_tiny.yaml`和`yolov7_tiny.yaml`。可直接复制原先的`coco.yaml`和`yolov7.yaml`，然后保持大体框架不变，对于`coco_tiny.yaml`，修改`train_tiny.txt`和`val_tiny.txt`所在文件路径，根据标签种类设置`nc`和`class name`；对于`yolov7_tiny.yaml`，修改`nc`。
 
 
 ## 训练
@@ -81,12 +81,10 @@ python train.py > log.txt 2>&1
 ```
 进行训练并导出过程日志。这里将一次训练日志放在`others`里。训练中的输出情况例如：
 ```
-Epoch 200/1, Step 231/1, size (640, 640), fp/bp time cost: 720.80 ms
-Epoch 200/1, Step 231/1, size (640, 640), loss: 27.2907, lbox: 0.0849, lobj: 2.7001, lcls: 0.6263, cur_lr: [0.00000000, 0.00000000, 0.10000000], step time: 721.23 ms
-Epoch 200/1, Step 231/2, size (640, 640), fp/bp time cost: 470.73 ms
-Epoch 200/1, Step 231/2, size (640, 640), loss: 27.2405, lbox: 0.0797, lobj: 2.6989, lcls: 0.6264, cur_lr: [0.00000216, 0.00000216, 0.09990216], step time: 476.26 ms
-Epoch 200/1, Step 231/3, size (640, 640), fp/bp time cost: 426.39 ms
-Epoch 200/1, Step 231/3, size (640, 640), loss: 27.2644, lbox: 0.0864, lobj: 2.6964, lcls: 0.6253, cur_lr: [0.00000433, 0.00000433, 0.09980433], step time: 430.63 ms
+Epoch 200/20, Step 231/1, size (640, 640), fp/bp time cost: 526.34 ms
+Epoch 200/20, Step 231/1, size (640, 640), loss: 1.4965, lbox: 0.0620, lobj: 0.0318, lcls: 0.0933, cur_lr: [0.00929212, 0.00929212, 0.00929514], step time: 979.38 ms
+Epoch 200/20, Step 231/2, size (640, 640), fp/bp time cost: 406.36 ms
+Epoch 200/20, Step 231/2, size (640, 640), loss: 1.4924, lbox: 0.0669, lobj: 0.0338, lcls: 0.0858, cur_lr: [0.00929423, 0.00929423, 0.00929724], step time: 410.26 ms
 ```
 这里在个人电脑上进行训练，总耗时约5小时。
 
