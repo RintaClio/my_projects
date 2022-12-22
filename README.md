@@ -125,12 +125,12 @@ cd detect
 python detect.py
 ```
 待检测图片存放在`detect/detect_images`文件夹，用户可自行增删。检测得到的结果存放在`results`文件夹。这里给出几个检测结果示例。 \
-<img width="450" height="250" src="https://github.com/RintaClio/my_picture/blob/main/1.jpg?raw=true" alt="animals"/>   <img width="450" height="250" src="https://github.com/RintaClio/my_picture/blob/main/animals.jpg?raw=true" alt="animals1"/> \
-<img width="450" height="250" src="https://github.com/RintaClio/my_picture/blob/main/2.jpg?raw=true" alt="basketball"/>   <img width="450" height="250" src="https://github.com/RintaClio/my_picture/blob/main/basketball.jpg?raw=true" alt="basketball1"/> \
+<img width="400" height="250" src="https://github.com/RintaClio/my_picture/blob/main/1.jpg?raw=true" alt="animals"/>   <img width="450" height="250" src="https://github.com/RintaClio/my_picture/blob/main/animals.jpg?raw=true" alt="animals1"/> \
+<img width="400" height="250" src="https://github.com/RintaClio/my_picture/blob/main/2.jpg?raw=true" alt="basketball"/>   <img width="450" height="250" src="https://github.com/RintaClio/my_picture/blob/main/basketball.jpg?raw=true" alt="basketball1"/> \
 <img width="180" height="250" src="https://github.com/RintaClio/my_picture/blob/main/3.jpg?raw=true" alt="celebrity"/>   <img width="180" height="250" src="https://github.com/RintaClio/my_picture/blob/main/celebrity.jpg?raw=true" alt="celebrity1"/> \
 <img width="400" height="250" src="https://github.com/RintaClio/my_picture/blob/main/4.jpg?raw=true" alt="crowd"/>   <img width="400" height="250" src="https://github.com/RintaClio/my_picture/blob/main/crowd.jpg?raw=true" alt="animals1"/>
-<img width="450" height="250" src="https://github.com/RintaClio/my_picture/blob/main/5.jpg?raw=true" alt="party"/>   <img width="450" height="250" src="https://github.com/RintaClio/my_picture/blob/main/party.jpg?raw=true" alt="party1"/>
-<img width="450" height="250" src="https://github.com/RintaClio/my_picture/blob/main/6.jpg?raw=true" alt="traffic"/>   <img width="450" height="250" src="https://github.com/RintaClio/my_picture/blob/main/traffic.jpg?raw=true" alt="animals1"/>
+<img width="400" height="250" src="https://github.com/RintaClio/my_picture/blob/main/5.jpg?raw=true" alt="party"/>   <img width="450" height="250" src="https://github.com/RintaClio/my_picture/blob/main/party.jpg?raw=true" alt="party1"/>
+<img width="400" height="250" src="https://github.com/RintaClio/my_picture/blob/main/6.jpg?raw=true" alt="traffic"/>   <img width="450" height="250" src="https://github.com/RintaClio/my_picture/blob/main/traffic.jpg?raw=true" alt="animals1"/>
 
 这里在`detect`文件夹中附上由`yolov7_tiny_ours.ckpt`模型转换得到的`.pt`格式的模型，用于pytorch框架下代码的目标检测测试。转换方法为：首先，使用`load_checkpoint`读取MindSpore生成的checkpoint文件，拿到参数名和参数值并存入`.txt`文件。然后，根据一个现有的yolov7的`.pth`模型，对照参数名将相应的参数值修改为所读取到的`.ckpt`的值。
 其中`conv.weight`相互对应，pth模型的`bn.bias`对应ckpt模型的`bn.beta`，pth模型的`bn.weight`对应ckpt模型的`bn.gamma`，pth模型的`running_mean`对应ckpt模型的`moving_mean`，pth模型的`running_var`对应ckpt模型的`moving_varience`。最后，将`.pth`格式的模型转换为`.pt`格式的模型。
